@@ -1,16 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post creation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurti straipsnį</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 30px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input[type="text"],
+    form textarea,
+    form input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <form>
-        <input type="text" name="title">
-        <textarea name="body" id=""></textarea>
-        <input type="submit" value="sukurti">
-    </form>
-    <script src="js/create.js"></script>
+  <form enctype="multipart/form-data">
+    <h2>Kurti naują straipsnį</h2>
+    <label for="title">Pavadinimas</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="body">Straipsnio tekstas</label>
+    <textarea name="body" id="body" rows="8" required></textarea>
+
+    <label for="image">Nuotrauka</label>
+    <input type="file" name="image" id="image" accept="image/*">
+
+    <input type="submit" value="Sukurti">
+  </form>
+
+  <script src="js/create.js"></script>
 </body>
 </html>
